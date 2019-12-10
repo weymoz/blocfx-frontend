@@ -1,3 +1,10 @@
-body {
-    background-color: pink;
-}
+@import 'base';
+@import 'header';
+@import 'logo';
+@import 'menu-btn';
+@import 'content';
+@import 'exchanger';
+@import 'input';
+@import 'decor';
+@import 'accept-btn';
+

@@ -1,0 +1,36 @@
+.input {
+    display: grid;
+    grid-template-columns: 1fr .6fr;
+    grid-template-rows: 17px 52px 52px 17px;
+    grid-gap: 10px;
+
+    &__fiat-value-label {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    &__fiat-value {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    &__fiat-type-label {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    &__fiat-type {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    &__account {
+        grid-column: 1 / -1;
+        grid-row: 3;
+    }
+
+    &__min-ammount {
+        grid-column: 1 / -1;
+        grid-row: 4;
+    }
+}

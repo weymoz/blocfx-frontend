@@ -1,0 +1,21 @@
+.content {
+  padding: 42px 16px 12px 16px;
+  background-color: $bgColorGray;
+
+  &__title {
+    color: $primColor;
+    font-family: 'Muli Black';
+    font-size: 28px;
+    line-height: 42px;  
+  }
+
+  &__main {
+    margin-top: 29px;
+  }
+
+  &__footer {
+      padding-top: 31px;
+      text-align: center;
+  }
+
+}
