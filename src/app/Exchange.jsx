@@ -28,7 +28,7 @@ const Exchange = () => (
             id="currency-fiat"
             name="currency"
             type="text"
-            className="input__fiat-value"
+            className="input-text input__fiat-value"
             defaultValue="198.39"
           />
 
@@ -78,7 +78,7 @@ const Exchange = () => (
             id="currency-fiat"
             name="currency"
             type="text"
-            className="input__fiat-value"
+            className="input-text input__fiat-value"
             defaultValue="198.39"
           />
 
