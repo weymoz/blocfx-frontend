@@ -4,12 +4,16 @@
 }
 
 @font-face {
+   font-family: 'Muli Bold';
+   src:  url('../assets/fonts/Muli/Muli-Bold/Muli-Bold.woff') format('woff')
+}
+
+@font-face {
    font-family: 'Muli Regular';
    src:  url('../assets/fonts/Muli/Muli-Regular/Muli-Regular.woff') format('woff')
 }
 
 $primColor: #151f51;
-
 $bgColorGray: rgba(248, 248, 252, 0.6);
 $outlineGrayColor: #e8e8eb;
 $mediumGrayColor: #6a6b7b;

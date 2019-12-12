@@ -1,0 +1,24 @@
+.currency-list-item {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 16px 0;
+
+    &__symbol {
+        font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+        margin-right: .7em;
+    }
+
+    &__acronym {
+        font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+    }
+
+    &__name {
+        margin-left: auto;
+    }
+
+}
+
+.custom-select__option:not(:last-child) .currency-list-item {
+    border-bottom: 1px solid $outlineGrayColor;
+}
