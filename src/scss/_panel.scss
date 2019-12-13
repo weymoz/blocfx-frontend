@@ -1,0 +1,21 @@
+.panel {
+    display: grid;
+    grid-template-columns: 1fr .6fr;
+    //grid-template-rows: 52px 52px 17px;
+    grid-gap: 10px;
+
+    &__value {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    &__currency {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    &__account {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+}

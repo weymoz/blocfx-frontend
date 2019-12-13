@@ -1,4 +1,0 @@
-export default {
-    CURRENCY: 'CURRENCY',
-    PAYMENT_ACCOUNT: "PAYMENT_ACCOUNT"
-};

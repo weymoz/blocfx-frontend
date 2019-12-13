@@ -1,13 +1,14 @@
 import React from "react";
-import Logo from "../assets/svg/logo.svg";
-import CustomSelect from "./CustomSelect";
-import Currency from './currency';
-import SelectType from './selectType';
+import inputValue from "./components/InputValue";
+import SelectCurrency from "./components/SelectCurrency";
+import fiatCurrencies from "@/app/data/currency-fiat"
+import cryptoCurrencies from "@/app/data/currency-crypto"
+import InputValue from "./components/InputValue";
+
 
 const Exchange = () => (
   <>
     <header className="header">
-      <img className="logo" src={Logo} />
       <div className="menu-btn">
         <div className="menu-btn__line-1"></div>
         <div className="menu-btn__line-2"></div>
@@ -20,57 +21,63 @@ const Exchange = () => (
 
       <section className="content__main exchanger">
 
-        <section className="exchanger__input input">
+        <section className="exchanger__panel panel">
 
-          <label htmlFor="currency-fiat" className="input__fiat-value-label">
-            You Send
-          </label>
+          <InputValue className="panel__value" classNamePrefix="custom-input" />
 
-          <input
-            id="currency-fiat"
-            name="currency"
-            type="text"
-            className="input-text input__fiat-value"
-            defaultValue="198.39"
+          <SelectCurrency
+            className="panel__currency custom-select select-currency"
+            classNamePrefix="custom-select"
+            inputId="select-fiat-currency"
+            currencies={fiatCurrencies}
+            defaultValue={{value: fiatCurrencies.USD.code, label: fiatCurrencies.USD.name}}
           />
 
-          <label htmlFor="select-fiat" className="input__fiat-type-label">
-            US Dollar
-          </label>
-
-          <CustomSelect
-            selectType={SelectType.CURRENCY}
-            className="input__fiat-type custom-select"
-            classNamePrefix={"custom-select"}
-            options={
-              Object.keys(Currency).map(type => ({
-                value: Currency[type].acronym,
-                label: Currency[type].acronym,
-              }))
-            }
-            defaultValue={{value: Currency.USD.acronym, label: Currency.USD.acronym}}
-          />
-
-          <CustomSelect
-            className="input__account custom-select"
-            classNamePrefix={"custom-select"}
-            options={
-              [
-                {value: "1234345345345", label: "4564373567"},
-                {value: "678567864567567", label: "98698769876876"},
-              ]
-            }
+          <SelectCurrency
+            className="panel__account custom-select select-currency"
+            classNamePrefix="custom-select"
+            inputId="select-fiat-currency"
+            currencies={cryptoCurrencies}
+            defaultValue={{value: cryptoCurrencies.BTC.code, label: cryptoCurrencies.BTC.name}}
           />
 
           <p className="input__min-ammount">Min. ammount 198.39 USD</p>
 
         </section>
 
+
         <div className="exchanger__decor decor">
           <svg className="decor__circle">
             <use href="#circle"></use>
           </svg>
         </div>
+
+
+        <section className="exchanger__panel panel">
+
+          <InputValue className="panel__value" classNamePrefix="custom-input" />
+
+          <SelectCurrency
+            className="panel__currency custom-select select-currency"
+            classNamePrefix="custom-select"
+            inputId="select-fiat-currency"
+            currencies={cryptoCurrencies}
+            defaultValue={{value: cryptoCurrencies.BTC.code, label: cryptoCurrencies.BTC.name}}
+          />
+
+          <SelectCurrency
+            inputId="select-fiat-currency"
+            className="panel__account custom-select select-currency"
+            classNamePrefix="custom-select"
+            currencies={fiatCurrencies}
+            defaultValue={{value: fiatCurrencies.USD.code, label: fiatCurrencies.USD.name}}
+          />
+
+
+
+          <p className="input__min-ammount">Min. ammount 198.39 USD</p>
+
+        </section>
 
       </section>
 

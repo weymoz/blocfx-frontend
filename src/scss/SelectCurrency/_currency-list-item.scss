@@ -1,0 +1,28 @@
+.currency-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 16px 0;
+    color: #6a6b7b;
+
+    &__icon {
+        width: 15px;
+        height: 15px;
+        margin-right: 1rem;
+    }
+
+    &__acronym {
+        font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+        line-height: 1;
+        ;
+    }
+
+    &__name {
+        margin-left: auto;
+    }
+
+}
+
+.custom-select__option:not(:last-child) .currency-list-item {
+    border-bottom: 1px solid $outlineGrayColor;
+}

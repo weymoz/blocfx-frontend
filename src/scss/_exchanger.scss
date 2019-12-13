@@ -2,14 +2,13 @@
   padding: 24px 20px;
   background-color: $bgColorWhite;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.04);
-
 }
 
 @media screen and (min-width: 1024px) {
   .exchanger {
     display: flex;
 
-    &__input {
+    &__panel{
       flex-grow: 1;
     }
 

@@ -1,16 +1,17 @@
 @import 'base';
-@import 'input-text';
 @import 'header';
 @import 'logo';
 @import 'menu-btn';
 @import 'content';
 
-//Custom Select
-@import 'custom-select';
-@import 'currency-list-item';
+
+@import 'InputValue/custom-input';
+@import 'SelectCurrency/custom-select';
+@import 'SelectCurrency/currency-list-item';
+@import 'SelectCurrency/select-currency';
 
 @import 'exchanger';
-@import 'input';
+@import 'panel';
 @import 'decor';
 @import 'accept-btn';
 
