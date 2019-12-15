@@ -30,12 +30,8 @@
   display: none;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $laptop) {
   .burgerBtn {
     display: none;
-  }
-
-  .menu {
-    display: block;
   }
 }

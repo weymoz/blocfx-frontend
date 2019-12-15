@@ -1,0 +1,11 @@
+@import "src/variables";
+
+.mainMenu {
+  display: none;
+}
+
+@media (min-width: $laptop) {
+  .mainMenu {
+    display: block;
+  }
+}
