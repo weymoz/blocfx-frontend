@@ -1,0 +1,41 @@
+@import "src/variables";
+
+.header {
+  background-color: $colorPrimary;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.04);
+}
+
+.logo {
+  display: block;
+  width: 121px;
+  height: 26px;
+}
+
+.burgerBtn {
+  display: block;
+  width: 20px;
+  height: 16px;
+  margin-left: auto;
+}
+
+.logo, .burgerBtn {
+  color: #151f51;
+}
+
+.menu {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .burgerBtn {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+}

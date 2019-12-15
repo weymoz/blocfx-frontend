@@ -1,25 +1,19 @@
 import React from "react";
 import {
     Route,
-    Link,
     Switch,
     Redirect
 } from 'react-router-dom'
-import s from "./Exchanger.css";
+import Header from '@/components/Header'
+import s from "./style.scss";
 
 export default function Exchanger() {
   return (
     <div className={s.layout}>
-      <header className={s.header}>
-        <h1>Logo</h1>
-        <nav className={s.menu}>
-          <ul>
-              <li><Link to="/exchanger/converter">Converter</Link></li>
-              <li><Link to="/exchanger/otc-desk" >OTC Desk</Link></li>
-          </ul>
-        </nav>
+      <header className={s.headerContainer}>
+        <Header />
       </header>
-      <main className={s.content}>
+      <main className={s.contentContainer}>
           <Switch>
             <Route path="/exchanger/converter" >
                 <Converter />

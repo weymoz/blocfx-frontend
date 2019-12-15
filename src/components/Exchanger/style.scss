@@ -1,0 +1,22 @@
+@import "src/variables";
+
+.layout {
+  background-color: rgba(248,248,252,0.6);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    display: flex;
+  }
+
+  .headerContainer {
+    min-width: 25%;
+  }
+
+  .contentContainer {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}

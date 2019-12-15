@@ -21,8 +21,7 @@ module.exports = {
     alias: {
       "@": path.resolve(__dirname, "src/")
     },
-    //extensions: [".js", ".jsx", ".scss", ".css", ".svg"]
-    extensions: [".js", ".jsx", ".css", ".svg"]
+    extensions: [".js", ".jsx", ".scss", ".css", ".svg"]
   },
 
   module: {
@@ -30,8 +29,7 @@ module.exports = {
     rules: [
 
       {
-        test: /\.css$/i,
-        //test: /\.scss$/i,
+        test: /\.scss$/i,
         use: [
           "style-loader", 
           {
@@ -43,7 +41,7 @@ module.exports = {
               }
             }
           },
-          //"sass-loader"
+          "sass-loader"
         ]
       },
 
@@ -54,7 +52,6 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env", "@babel/preset-react"],
-            //plugins: ["@babel/transform-react-jsx-source"]
           }
         }
       },
