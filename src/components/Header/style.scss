@@ -26,11 +26,12 @@
   color: #151f51;
 }
 
-.menu {
-  display: none;
-}
 
 @media (min-width: $laptop) {
+  .header {
+    display: block;
+    padding: 40px 35px;
+  }
   .burgerBtn {
     display: none;
   }
