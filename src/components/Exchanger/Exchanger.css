@@ -11,10 +11,22 @@
 }
 
 @media (min-width: 1024px) {
-  .menu {
-    display: block;
-  }
+
   .layout {
     display: flex;
+  }
+
+  .header {
+    flex-grow: .33;
+    flex-shrink: 0;
+  }
+
+  .content {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  .menu {
+    display: block;
   }
 }
