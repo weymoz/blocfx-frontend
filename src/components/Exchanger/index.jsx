@@ -1,4 +1,10 @@
 import React from "react";
+import {
+    Route,
+    Link,
+    Switch,
+    Redirect
+} from 'react-router-dom'
 import s from "./Exchanger.css";
 
 export default function Exchanger() {
@@ -8,24 +14,34 @@ export default function Exchanger() {
         <h1>Logo</h1>
         <nav className={s.menu}>
           <ul>
-            <li>menu item 1</li>
-            <li>menu item 2</li>
-            <li>menu item 3</li>
-            <li>menu item 4</li>
-            <li>menu item 5</li>
-            <li>menu item 6</li>
-            <li>menu item 7</li>
+              <li><Link to="/exchanger/converter">Converter</Link></li>
+              <li><Link to="/exchanger/otc-desk" >OTC Desk</Link></li>
           </ul>
         </nav>
       </header>
       <main className={s.content}>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          eaque ullam dolore! Quisquam vel, esse mollitia ullam nesciunt sint
-          necessitatibus, aliquid inventore quis doloremque perferendis
-          molestias voluptatem? Beatae, ullam saepe!
-        </p>
+          <Switch>
+            <Route path="/exchanger/converter" >
+                <Converter />
+            </Route>
+            <Route path="/exchanger/otc-desk" >
+                <OtcDesk />
+            </Route>
+            <Redirect to="/exchanger/converter" />
+          </Switch>
       </main>
     </div>
   );
+}
+
+function Converter() {
+    return (
+        <h2>Converter</h2>
+    )
+}
+
+function OtcDesk() {
+    return (
+        <h2>OTC Desk</h2>
+    )
 }
