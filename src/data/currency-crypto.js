@@ -1,5 +1,5 @@
-import bitcoin from '../../assets/sprites/currencies/crypto/bitcoin_sign.svg'
-import etherium from '../../assets/sprites/currencies/crypto/etherium_sign.svg'
+import bitcoin from '../assets/sprites/currencies/crypto/bitcoin_sign.svg'
+import etherium from '../assets/sprites/currencies/crypto/etherium_sign.svg'
 
 export default {
     BTC: {

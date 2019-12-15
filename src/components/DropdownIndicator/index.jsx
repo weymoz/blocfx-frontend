@@ -8,11 +8,11 @@ const DropdownIndicator = props => {
   return (
     <components.DropdownIndicator {...props}>
       {menuIsOpen ? (
-        <svg className="custom-select__dropdown-arrow">
+        <svg className="">
           <use href="#arrow-up"></use>
         </svg>
       ) : (
-        <svg className="custom-select__dropdown-arrow">
+        <svg className="">
           <use href="#arrow-down"></use>
         </svg>
       )}

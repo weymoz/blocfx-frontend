@@ -1,0 +1,20 @@
+.header {
+  background-color: darkgoldenrod;
+}
+
+.menu {
+  display: none;
+}
+
+.content {
+    background-color: darkgray;
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    display: block;
+  }
+  .layout {
+    display: flex;
+  }
+}

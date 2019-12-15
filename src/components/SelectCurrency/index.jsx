@@ -1,7 +1,6 @@
 import React from "react";
 import Select, { components } from "react-select";
-import CurrencyFiat from "@/app/data/currency-fiat";
-import DropdownIndicator from "@/app/components/DropdownIndicator";
+import DropdownIndicator from "@/components/DropdownIndicator";
 
 const customStyles = {
   option: (provided, state) => {
@@ -43,7 +42,7 @@ const SingleValue = ({ children, ...props }) => {
   const { sprite } = currencies[currencyCode];
   return (
     <>
-      <svg className="select-currency__currency-icon">
+      <svg className="">
         <use href={`#${sprite.id}`}></use>
       </svg>
       <components.SingleValue {...props}>{children}</components.SingleValue>
@@ -57,12 +56,12 @@ const Option = props => {
   const { sprite, code, name } = currencies[currencyCode];
   return (
     <components.Option {...props}>
-      <div className="currency-list-item">
-        <svg className="currency-list-item__icon">
+      <div className="">
+        <svg className="">
           <use href={`#${sprite.id}`}></use>
         </svg>
-        <div className="currency-list-item__acronym">{code}</div>
-        <div className="currency-list-item__name">{name}</div>
+        <div className="">{code}</div>
+        <div className="">{name}</div>
       </div>
     </components.Option>
   );
@@ -79,7 +78,7 @@ const Control = (props) => {
 
   return (
     <>
-      <label className={labelClass} htmlFor="">{labelText}</label>
+      <label className={""} htmlFor="">{labelText}</label>
       <components.Control {...props} />
     </>
   )

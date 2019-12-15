@@ -1,7 +1,7 @@
-import dollar from '../../assets/sprites/currencies/fiat/dollar_sign.svg'
-import euro from '../../assets/sprites/currencies/fiat/euro_sign.svg'
-import pound from '../../assets/sprites/currencies/fiat/pound_sign.svg'
-import yen from '../../assets/sprites/currencies/fiat/yen_sign.svg'
+import dollar from '../assets/sprites/currencies/fiat/dollar_sign.svg'
+import euro from '../assets/sprites/currencies/fiat/euro_sign.svg'
+import pound from '../assets/sprites/currencies/fiat/pound_sign.svg'
+import yen from '../assets/sprites/currencies/fiat/yen_sign.svg'
 
 let parser = new DOMParser();
 let serializer = new XMLSerializer();
