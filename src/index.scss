@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'Muli Regular';
+    src: url(./assets/fonts/Muli/Muli-Regular/Muli-Regular.woff);
+}
+
+body {
+    font-family: 'Muli Regular', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
 body, ul, li, h1, h2, p {
     margin: 0;
     padding: 0;
