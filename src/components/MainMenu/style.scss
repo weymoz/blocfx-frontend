@@ -4,6 +4,37 @@
   display: none;
 }
 
+.mainMenuItem {
+    color: $colorGray;
+    display: block;
+    padding: 17px 0;
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: 26px 26px;
+}
+
+.active {
+  color: blue;
+}
+
+.converter {
+    composes: mainMenuItem;
+    background-image: url('../../assets/svg/menu/converter.svg');
+}
+.otcDesk {
+    composes: mainMenuItem;
+    background-image: url('../../assets/svg/menu/otc.svg');
+}
+.paymentAccounts {
+    composes: mainMenuItem;
+    background-image: url('../../assets/svg/menu/payment_accounts.svg');
+}
+.beneficiaries {
+    composes: mainMenuItem;
+    background-image: url('../../assets/svg/menu/beneficiary.svg');
+}
+
 @media (min-width: $laptop) {
   .mainMenu {
     display: block;

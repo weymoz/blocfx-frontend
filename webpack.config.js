@@ -63,7 +63,7 @@ module.exports = {
 
       {
         test: /\.(png|jpg|gif|svg)$/,
-        include: path.resolve(__dirname, 'src/assets/images'),
+        include: [path.resolve(__dirname, 'src/assets/svg')],
         use: [
           {
             loader: "file-loader",
