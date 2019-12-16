@@ -25,7 +25,7 @@ export default {
     },
 
 	GBP: {
-		name: "British Pound Sterling",
+		name: "Pound Sterling",
 		code: "GBP",
         sprite: pound
     },
