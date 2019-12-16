@@ -5,6 +5,7 @@ import {
     Redirect
 } from 'react-router-dom'
 import Header from '@/components/Header'
+import Converter from '@/components/Converter'
 import s from "./style.scss";
 
 export default function Exchanger() {
@@ -28,11 +29,6 @@ export default function Exchanger() {
   );
 }
 
-function Converter() {
-    return (
-        <h2>Converter</h2>
-    )
-}
 
 function OtcDesk() {
     return (

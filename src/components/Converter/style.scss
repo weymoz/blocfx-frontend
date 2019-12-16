@@ -1,0 +1,14 @@
+@import "src/variables";
+
+.header {
+    font-family: 'Muli Black', Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    line-height: 42px;
+    color: $colorPrimary;
+    margin-bottom: 29px;
+}
+
+.container {
+    background-color: #fff;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.04);
+}

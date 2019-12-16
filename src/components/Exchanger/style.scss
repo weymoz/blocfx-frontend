@@ -6,6 +6,10 @@
   margin: 0 auto;
 }
 
+.contentContainer {
+  padding: 36px 16px;
+}
+
 @media (min-width: $laptop) {
   .layout {
     display: flex;
