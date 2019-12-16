@@ -1,0 +1,43 @@
+@import "src/variables";
+
+.direction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.direction:before, 
+.direction:after {
+    content: " ";
+    width: 50%;
+    display: block;
+    height: 1px;
+    background-color: gray;
+}
+
+.circle {
+    width: 51px;
+    height: 51px;
+    color: $colorPrimary;
+}
+
+@media (min-width: $laptop) {
+   .direction {
+       flex-direction: column;
+   } 
+
+   .circle {
+       transform: rotate(90deg);
+   }
+
+.direction:before, 
+.direction:after {
+    content: " ";
+    width: 1px;
+    display: block;
+    height: 50%;
+    background-color: gray;
+}
+
+}

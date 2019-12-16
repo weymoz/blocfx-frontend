@@ -7,17 +7,8 @@ import s from './style.scss'
 export default function Pane({direction}) {
     const currency = direction ? fiatCurrencies : cryptoCurrencies;
     return (
-        <div>
+        <div className={s.pane}>
           {withCurrency(currency)}
-          {/*}
-          <SelectCurrency
-            className=""
-            classNamePrefix=""
-            inputId="select-fiat-currency"
-            currencies={fiatCurrencies}
-            defaultValue={{value: fiatCurrencies.USD.code, label: fiatCurrencies.USD.name}}
-          />
-    {*/}
         </div>
     )
 }

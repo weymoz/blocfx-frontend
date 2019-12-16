@@ -15,9 +15,9 @@ export default function Converter() {
         <>
             <h2 className={s.header}>Converter</h2>
             <section className={s.container}>
-                <Pane direction />
+                <Pane  />
                 <Direction />
-                <Pane />
+                <Pane direction />
             </section>
         </>
     )
