@@ -9,7 +9,7 @@ export default {
     },
 
 	ETC: {
-		name: "Ether",
+		name: "Etherium",
 		code: "ETC",
         sprite: etherium
     }

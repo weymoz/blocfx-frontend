@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Select, { components } from "react-select";
 import s from "./style.scss";
+import { useRouteMatch } from "react-router-dom";
 
 const customStyles = {
   container: provided => ({
@@ -74,13 +75,13 @@ const DropdownIndicator = props => {
 };
 
 const SingleValue = ({ children, ...props }) => {
-  const currencies = props.selectProps.currencies;
-  const currencyCode = props.data.value;
-  const { sprite } = currencies[currencyCode];
+  const currentValue = props.data.value;
+  const iconId = props.selectProps.currency[currentValue].sprite.id;
+
   return (
     <>
       <svg className={s.singleValueCurrencyIcon}>
-        <use href={`#${sprite.id}`}></use>
+        <use href={`#${iconId}`}></use>
       </svg>
       <components.SingleValue {...props}>{children}</components.SingleValue>
     </>
@@ -88,7 +89,7 @@ const SingleValue = ({ children, ...props }) => {
 };
 
 const Option = props => {
-  const currencies = props.selectProps.currencies;
+  const currencies = props.selectProps.currency;
   const currencyCode = props.data.value;
   const { sprite, code, name } = currencies[currencyCode];
   return (
@@ -104,29 +105,20 @@ const Option = props => {
   );
 };
 
-const Control = props => {
-  const currencies = props.selectProps.currencies;
-  let currentValue = props.getValue()[0].value;
-  const labelText = currencies[currentValue].name;
 
-  const labelClass = props.selectProps.classNamePrefix + "__label";
+const Control = props => {
+  const currentVal = props.selectProps.value.value;
+  const currency = props.selectProps.currency;
+  const labelText = currency[currentVal].name
 
   return (
     <>
-      <label className={""} htmlFor="">
-        {labelText}
-      </label>
+      <label>{labelText}</label>
       <components.Control {...props} />
     </>
   );
 };
 
-const mapCurrenciesToOptions = currencies =>
-  Object.keys(currencies).map(code => ({ value: code, label: code }));
-
-/**
- * Main Component
- */
 
 const SelectCurrency = props => {
   return (
@@ -134,31 +126,9 @@ const SelectCurrency = props => {
       {...props}
       menuPlacement={"bottom"}
       styles={customStyles}
-      options={mapCurrenciesToOptions(props.currencies)}
-      components={{
-        DropdownIndicator,
-        Option,
-        SingleValue,
-        Control
-      }}
+      components={{Control}}
     />
   );
 };
 
-
-export default function withCurrency(currency) {
-  const firstKey= Object.keys(currency)[0];
-  const firstItem = currency[firstKey]
-  return (
-    <SelectCurrency
-      className=""
-      classNamePrefix=""
-      inputId="select-fiat-currency"
-      currencies={currency}
-      defaultValue={{
-        value: firstItem.code,
-        label: firstItem.name
-      }}
-    />
-  );
-}
+export default SelectCurrency;
