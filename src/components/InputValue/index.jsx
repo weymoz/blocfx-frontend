@@ -1,19 +1,17 @@
 import React from "react";
+import s from "./style.scss";
 
-const InputValue = props => {
+const InputValue = ({ labelText, value, onChange, defaultValue }) => {
   return (
-    <div className={`${props.classNamePrefix} ${props.className}`}>
-
-      <label htmlFor="currency-fiat" className={`${props.classNamePrefix}__label`}>
-        You Send
-      </label>
+    <div>
+      <label>{labelText}</label>
 
       <input
-        className={`${props.classNamePrefix}__input`}
-        id="currency-fiat"
-        name="currency"
+        className={s.inputValue}
         type="text"
-        defaultValue="198.39"
+        defaultValue={defaultValue}
+        value={value}
+        onChange={onChange}
       />
     </div>
   );

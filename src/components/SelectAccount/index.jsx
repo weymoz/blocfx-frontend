@@ -120,7 +120,7 @@ const Control = props => {
 };
 
 
-const SelectCurrency = props => {
+const SelectAccount = props => {
   return (
     <Select
       {...props}
@@ -131,4 +131,4 @@ const SelectCurrency = props => {
   );
 };
 
-export default SelectCurrency;
+export default SelectAccount;
