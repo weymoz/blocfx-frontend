@@ -3,21 +3,20 @@ import Media from "react-media";
 import Collapse from "@kunukn/react-collapse";
 import s from "./style.scss";
 
-export default function BeneficiaryPane() {
+export default function AccountPane() {
   let [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
+    console.log("jhgjhgjg");
     setIsOpen(!isOpen);
   };
 
   const OpenContent = () => (
     <div className={s.pane}>
-      <p className={s.accountLabel}>Name</p>
-      <p className={s.accountValue}>John Doe</p>
       <p className={s.accountLabel}>Bank Name</p>
       <p className={s.accountValue}>Raiffeisen Bank</p>
-      <p className={s.accountLabel}>Account Number</p>
-      <p className={s.accountValue}>2112 4275 9123 1925</p>
+      <p className={s.accountLabel}>Bank account number</p>
+      <p className={s.accountValue}>5168 7556 4123 4219</p>
       <p className={s.accountLabel}>Currency</p>
       <p className={s.accountValue}>EUR</p>
     </div>
@@ -29,10 +28,10 @@ export default function BeneficiaryPane() {
       <div className={s.pane}>
         <p className={s.accountLabel}>Sort Code</p>
         <p className={s.accountValue}>12-34-56</p>
-        <p className={s.accountLabel}>Bank SWIFT/BIC code</p>
-        <p className={s.accountValue}>FXBBBeBBXX</p>
-        <p className={s.accountLabel}>Bank Full Address</p>
-        <p className={s.accountValue}>John Charlotte str., 48 WIT</p>
+        <p className={s.accountLabel}>Bank full address</p>
+        <p className={s.accountValue}>Charlotte str. 48 WIT</p>
+        <p className={s.accountLabel}>Location</p>
+        <p className={s.accountValue}>Vienna, Austria</p>
       </div>
   );
 
@@ -53,7 +52,7 @@ export default function BeneficiaryPane() {
 
   return (
     <>
-      <h1 className={s.header}>Beneficiary</h1>
+      <h1 className={s.header}>Payment Account</h1>
 
       <section className={s.section}>
         <OpenContent />
@@ -81,7 +80,6 @@ export default function BeneficiaryPane() {
                     <Decor />
                     <CloseableContent />
                     {isOpen && <ToggleButton isOpen={isOpen} onClick={handleToggle} />}
-
                   </Collapse>
                 </>
               )}

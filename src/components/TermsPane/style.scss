@@ -1,0 +1,54 @@
+@import "src/variables";
+
+.header {
+  font-family: "Muli Bold", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 38px;
+  color: $colorPrimary;
+  margin-bottom: 18px;
+}
+
+.section {
+  background-color: #fff;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.04);
+  padding: 38px 20px;
+  margin-bottom: 55px;
+
+  font-size: 16px;
+  line-height: 24px;
+
+  h2 {
+    margin: 35px 0 15px 0;
+    font-size: 20px;
+    line-height: 30px;
+    color: #151f51;
+    font-weight: bold;
+    font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+  }
+
+  h3 {
+    margin: 25px 0 10px 0;
+    font-size: 18px;
+    line-height: 24px;
+    color: #151f51;
+    font-weight: bold;
+    font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  ul {
+    li {
+      margin: 5px 0;
+    }
+  }
+
+  .subItem {
+    margin-left: 13px;
+  }
+}
+
+
+

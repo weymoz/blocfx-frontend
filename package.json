@@ -28,9 +28,9 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "@kunukn/react-collapse": "^2.2.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-collapse": "^5.0.0",
     "react-dom": "^16.12.0",
     "react-media": "^1.10.0",
     "react-router-dom": "^5.1.2",

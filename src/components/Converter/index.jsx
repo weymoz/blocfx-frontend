@@ -3,7 +3,7 @@ import Direction from "@/components/Direction";
 import SelectCurrency from "@/components/SelectCurrency";
 import InputValue from "@/components/InputValue";
 import SelectAccount, { ACCOUNT_TYPE } from "@/components/SelectAccount";
-import AcceptRates from "@/components/AcceptRates";
+import NextStep from "@/components/NextStep";
 import PopularCurrencies from "@/components/PopularCurrencies";
 
 import fiatCurrencies from "@/data/currency-fiat";
@@ -176,7 +176,7 @@ export default function Converter() {
 
       </section>
 
-      <AcceptRates />
+      <NextStep path="/exchanger/fiat-token" buttonText="Accept rates" infoText="30 seconds to update rates feed" />
       <PopularCurrencies />
     </>
   );
