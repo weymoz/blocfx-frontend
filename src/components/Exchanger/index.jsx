@@ -25,6 +25,7 @@ export default function Exchanger() {
             <Redirect to="/exchanger/converter" />
           </Switch>
       </main>
+
     </div>
   );
 }

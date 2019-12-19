@@ -3,4 +3,19 @@
 .inputValue {
     display: block;
     border: 1px solid $inputBorderColor;
+    width: 100%;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 24px;
+    
+    background-image: url("../../assets/svg/x-cross.svg");
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-position:  95% 50%;
+}
+
+.inputLabel {
+    display: block;
+    margin-bottom: 14px;
 }

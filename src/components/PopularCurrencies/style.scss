@@ -1,0 +1,46 @@
+@import "src/variables";
+
+.popularCurrencies {
+    display: none
+}
+
+.header {
+    color: #151f51;
+    margin-bottom: 18px;
+}
+
+.container {
+    background-color: #fff;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 40px 30px 24px;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.04);
+    padding: 32px 20px;
+}
+
+.crypto {
+
+}
+
+.currency {
+    font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #151f51;
+}
+
+.percent {
+    color: green;
+}
+
+.down {
+    color: red;
+}
+
+@media (min-width: 768px) {
+    .popularCurrencies {
+        display: block;
+    }
+
+    
+}

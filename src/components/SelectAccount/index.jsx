@@ -1,56 +1,14 @@
 import React, { useRef, useState, useEffect } from "react";
 import Select, { components } from "react-select";
+import selectStyles from "@/common/select-styles"
 import s from "./style.scss";
 
-const customStyles = {
-  container: provided => ({
-    ...provided,
-    minWidth: "250px"
+const ACCOUNT_TYPE = {
+  BANK: "Payment Account",
+  BENEFICIARY: "Beneficiary"
+}
 
-  }),
-
-  menu: provided => ({
-    ...provided,
-    borderRadius: 2
-  }),
-
-  menuList: provided => ({
-    ...provided,
-    paddingTop: 0,
-    paddingBottom: 0
-  }),
-
-  indicatorSeparator: provided => ({
-    ...provided,
-    display: "none"
-  }),
-
-  option: (provided, state) => {
-    return {
-      ...provided,
-
-      backgroundColor: "tansparent",
-      color: "inherit",
-      padding: "10",
-
-      ":active": {
-        backgroundColor: "transparent"
-      },
-
-      ":hover": {
-        backgroundColor: "#f5f6fc"
-      }
-    };
-  },
-
-  singleValue: (provided, { data }) => {
-    return {
-      ...provided,
-      display: "flex",
-      marginLeft: "26px"
-    };
-  }
-};
+export { ACCOUNT_TYPE };
 
 /**
  *  Sub components
@@ -75,47 +33,65 @@ const DropdownIndicator = props => {
 };
 
 const SingleValue = ({ children, ...props }) => {
-  const currentValue = props.data.value;
-  const iconId = props.selectProps.currency[currentValue].sprite.id;
+
+  const { number } = props.data;
+
+  const Content = (
+  <span>{number}</span>
+  );
 
   return (
-    <>
-      <svg className={s.singleValueCurrencyIcon}>
-        <use href={`#${iconId}`}></use>
-      </svg>
-      <components.SingleValue {...props}>{children}</components.SingleValue>
-    </>
+      <components.SingleValue {...props}>{Content}</components.SingleValue>
   );
 };
 
 const Option = props => {
-  const currencies = props.selectProps.currency;
-  const currencyCode = props.data.value;
-  const { sprite, code, name } = currencies[currencyCode];
+  const { type } = props.selectProps;
+  let Content;
+
+  switch (type) {
+
+    case ACCOUNT_TYPE.BANK:
+      const { bank, number } = props.data;
+      Content = (
+        <div >
+          <div>{bank}</div>
+          <div>{number}</div>
+        </div>
+      )
+      break;
+
+      case ACCOUNT_TYPE.BENEFICIARY:
+        const { name, currency } = props.data
+        Content = (
+          <div >
+            <div>{name}</div>
+            <div>{currency}</div>
+          </div>
+        )
+        break;
+
+    default: 
+        Content = "Provide account type"
+  }
+
+
   return (
     <components.Option {...props}>
-      <div className={s.customOption}>
-        <svg className={s.optionCurrencyIcon}>
-          <use href={`#${sprite.id}`}></use>
-        </svg>
-        <div className={s.customOption_Code}>{code}</div>
-        <div className={s.customOption_Name}>{name}</div>
-      </div>
+      {Content}
     </components.Option>
   );
 };
 
 
-const Control = props => {
-  const currentVal = props.selectProps.value.value;
-  const currency = props.selectProps.currency;
-  const labelText = currency[currentVal].name;
 
+const MenuList = props => {
+  const { type } = props.selectProps;
   return (
-    <>
-      <label>{labelText}</label>
-      <components.Control {...props} />
-    </>
+    <components.MenuList {...props}>
+      <div>{`Add ${type}`}</div>
+      {props.children}
+    </components.MenuList>
   );
 };
 
@@ -125,8 +101,8 @@ const SelectAccount = props => {
     <Select
       {...props}
       menuPlacement={"bottom"}
-      styles={customStyles}
-      components={{Control, Option, SingleValue, DropdownIndicator}}
+      styles={selectStyles}
+      components={{ Option, SingleValue, DropdownIndicator, MenuList }}
     />
   );
 };

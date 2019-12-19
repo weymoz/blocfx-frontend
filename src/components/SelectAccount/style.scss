@@ -1,0 +1,34 @@
+@import "src/variables";
+
+.optionCurrencyIcon {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+}
+
+.singleValueCurrencyIcon {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    color: $colorAccent; 
+}
+
+.dropdownArrow {
+    width: 10px;
+    height: 10px;
+}
+
+.customOption {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    &_Code {
+        font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+    }
+
+    &_Name {
+        margin-left: auto;
+    }
+}
+

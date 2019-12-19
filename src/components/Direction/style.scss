@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 10px 0;
 }
 
 .direction:before, 
@@ -13,18 +14,19 @@
     width: 50%;
     display: block;
     height: 1px;
-    background-color: gray;
+    background-color: $inputBorderColor;
 }
 
 .circle {
-    width: 51px;
-    height: 51px;
+    width: 65px;
+    height: 65px;
     color: $colorPrimary;
 }
 
 @media (min-width: $laptop) {
    .direction {
        flex-direction: column;
+       width: 20%;
    } 
 
    .circle {
@@ -37,7 +39,6 @@
     width: 1px;
     display: block;
     height: 50%;
-    background-color: gray;
 }
 
 }

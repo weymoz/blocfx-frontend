@@ -1,10 +1,17 @@
 import React from "react";
 import s from "./style.scss";
 
-const InputValue = ({ labelText, value, onChange, defaultValue }) => {
+const InputValue = ({
+  labelText,
+  value,
+  onChange,
+  defaultValue,
+  className
+}) => {
+
   return (
-    <div>
-      <label>{labelText}</label>
+    <div className={className}>
+      <label className={s.inputLabel}>{labelText}</label>
 
       <input
         className={s.inputValue}
@@ -13,6 +20,7 @@ const InputValue = ({ labelText, value, onChange, defaultValue }) => {
         value={value}
         onChange={onChange}
       />
+
     </div>
   );
 };

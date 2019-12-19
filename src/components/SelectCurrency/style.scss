@@ -14,8 +14,8 @@
 }
 
 .dropdownArrow {
-    width: 6px;
-    height: 6px;
+    width: 10px;
+    height: 10px;
 }
 
 .customOption {
@@ -32,3 +32,28 @@
     }
 }
 
+.inputLabel {
+    display: block;
+    margin-bottom: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+:global(.SelectCurrency) {
+    &__menu {
+        width: calc(100vw - 72px) !important;
+        right: 0;
+
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+:global(.SelectCurrency) {
+        &__menu {
+            width: 100% !important;
+            right: auto;
+
+        }
+    }
+}

@@ -1,56 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Select, { components } from "react-select";
+import selectStyles from "@/common/select-styles"
 import s from "./style.scss";
-
-const customStyles = {
-  container: provided => ({
-    ...provided,
-    minWidth: "250px"
-
-  }),
-
-  menu: provided => ({
-    ...provided,
-    borderRadius: 2
-  }),
-
-  menuList: provided => ({
-    ...provided,
-    paddingTop: 0,
-    paddingBottom: 0
-  }),
-
-  indicatorSeparator: provided => ({
-    ...provided,
-    display: "none"
-  }),
-
-  option: (provided, state) => {
-    return {
-      ...provided,
-
-      backgroundColor: "tansparent",
-      color: "inherit",
-      padding: "10",
-
-      ":active": {
-        backgroundColor: "transparent"
-      },
-
-      ":hover": {
-        backgroundColor: "#f5f6fc"
-      }
-    };
-  },
-
-  singleValue: (provided, { data }) => {
-    return {
-      ...provided,
-      display: "flex",
-      marginLeft: "26px"
-    };
-  }
-};
 
 /**
  *  Sub components
@@ -113,7 +64,7 @@ const Control = props => {
 
   return (
     <>
-      <label>{labelText}</label>
+      <label className={s.inputLabel}>{labelText}</label>
       <components.Control {...props} />
     </>
   );
@@ -124,9 +75,12 @@ const SelectCurrency = props => {
   return (
     <Select
       {...props}
+      className="SelectCurrency"
+      classNamePrefix="SelectCurrency"
       menuPlacement={"bottom"}
-      styles={customStyles}
+      styles={selectStyles}
       components={{Control, Option, SingleValue, DropdownIndicator}}
+      //menuIsOpen
     />
   );
 };
