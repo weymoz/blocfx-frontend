@@ -1,0 +1,102 @@
+@import "src/variables";
+
+.header {
+    font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 38px;
+    color: $colorPrimary;
+    margin-bottom: 18px;
+}
+
+.section {
+    background-color: #fff;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.04);
+    padding: 24px 20px 10px 20px;
+    margin-bottom: 55px;
+}
+
+.decor {
+    background-color: #ebebf5;
+} 
+
+.decor:before {
+    content: " ";
+    display: block;
+    height: 1px;
+    width: 100%;
+}
+
+.pane {
+    padding: 25px 20px;
+    flex-grow: 1;
+
+        display: grid;
+        grid-template-columns: 70% 1fr;
+        grid-template-rows: repeat(4, min-content);
+        grid-auto-flow: column;
+        grid-gap: 10px;
+}
+
+.accountValue {
+    font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+    color: $colorPrimary;
+    margin-bottom: 30px;
+}
+
+.toggleButton {
+    border: none;
+    height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.buttonHidden {
+    display: none;
+}
+
+.buttonVisible{
+    display: block;
+}
+
+.dropdownArrow {
+    width: 12px;
+    height: 12px;
+}
+
+
+
+.hidden {
+    //display: block !important;
+    max-height: 0;
+    transition: max-height 0.25s ease-out;
+    overflow: hidden;
+}
+
+.visible {
+    //display: grid !important;
+    max-height: 500px;
+    transition: max-height 0.3s ease-in;
+}
+
+@media (min-width: 768px) {
+    .pane {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: min-content min-content;
+        grid-auto-flow: column;
+        grid-gap: 10px;
+    }
+
+    .decor:before {
+        content: " ";
+        display: block;
+        width: 1px;
+    }
+
+    .accountValue {
+        margin-bottom: 10px;
+    }
+}
