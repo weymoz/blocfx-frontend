@@ -30,17 +30,17 @@ export default function Converter() {
 
   // Select currency data
   let [currencyType1, setCurrencyType1] = useState(fiatCurrencies);
-  let [currencyType2, setCurrencyType2] = useState(cryptoCurrencies);
+  let [currencyType2, setCurrencyType2] = useState(fiatCurrencies);
 
   let [currencyOptions1, setCurrencyOptions1] = useState(
     mapCurrenciesToOptions(fiatCurrencies)
   );
-  let [options2, setOptions2] = useState(
-    mapCurrenciesToOptions(cryptoCurrencies)
+  let [currencyOptions2, setOptions2] = useState(
+    mapCurrenciesToOptions(fiatCurrencies)
   );
 
   let [currency1, setCurrency1] = useState(currencyOptions1[0]);
-  let [currency2, setCurrency2] = useState(options2[0]);
+  let [currency2, setCurrency2] = useState(currencyOptions2[0]);
 
   // Select account data
   let [accountType1, setAccountType1] = useState(ACCOUNT_TYPE.BANK);
@@ -70,8 +70,8 @@ export default function Converter() {
 
     // Swap select src. and dest.
     temp = currencyOptions1;
-    setCurrencyOptions1(options2);
-    setOptions2(temp);
+    setCurrencyOptions1(currencyOptions2);
+    setCurrencyOptions2(temp);
 
     temp = currency1;
     setCurrency1(currency2);
@@ -157,7 +157,7 @@ export default function Converter() {
           <SelectCurrency
             className={s.selectCurrency}
             currency={currencyType2}
-            options={options2}
+            options={currencyOptions2}
             onChange={onSelectChange.bind(null, setCurrency2)}
             value={currency2}
           />

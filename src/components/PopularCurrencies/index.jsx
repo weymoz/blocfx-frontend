@@ -3,7 +3,7 @@ import s from "./style.scss";
 
 export default function PopularCurrencies() {
   return (
-    <div className={s.PopularCurrencies}>
+    <div className={s.popularCurrencies}>
       <h2 className={s.header}>Popular Currencies</h2>
       <section className={s.container}>
         <p className={s.crypto}>BTC</p>

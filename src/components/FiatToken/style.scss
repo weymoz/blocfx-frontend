@@ -1,0 +1,93 @@
+@import "src/variables";
+
+.header {
+    font-family: 'Muli Black', Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    line-height: 42px;
+    color: $colorPrimary;
+    margin-bottom: 29px;
+}
+
+.subHeader {
+    font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+    color: $colorPrimary;
+    margin-bottom: 24px;
+}
+
+.decor {
+    background-color: #ebebf5;
+} 
+
+.decor:before {
+    content: " ";
+    display: block;
+    height: 1px;
+    width: 100%;
+}
+
+// -------- Sections -----------
+.section {
+    background-color: #fff;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.04);
+    padding: 24px 20px;
+}
+
+.ammount {
+    composes: section;
+    margin-bottom: 55px;
+}
+
+
+.account {
+    composes: section;
+}
+
+.pane {
+    padding: 25px 20px;
+    flex-grow: 1;
+
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-gap: 10px;
+
+}
+
+.value, .currency {
+    border: 1px solid #ebebf5;
+    border-radius: 2px;
+    padding: 14px 20px;
+    font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+    color: $colorPrimary;
+}
+
+.value {
+}
+
+.currency {
+
+}
+
+.sign {
+    color: $colorAccent;
+    margin-right: 10px;
+}
+.info {
+    grid-column: 1 / 3;
+}
+
+
+
+@media (min-width: 1025px) {
+    .section {
+        display: flex;
+    }
+
+
+    .decor:before {
+        content: " ";
+        display: block;
+        width: 1px;
+    }
+}

@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import Header from '@/components/Header'
 import Converter from '@/components/Converter'
+import FiatToken from '@/components/FiatToken'
 import s from "./style.scss";
 
 export default function Exchanger() {
@@ -18,6 +19,9 @@ export default function Exchanger() {
           <Switch>
             <Route path="/exchanger/converter" >
                 <Converter />
+            </Route>
+            <Route path="/exchanger/fiat-token" >
+                <FiatToken />
             </Route>
             <Route path="/exchanger/otc-desk" >
                 <OtcDesk />
