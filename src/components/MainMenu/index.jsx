@@ -25,6 +25,26 @@ const items = [
     to: "/exchanger/beneficiaries",
     className: s.beneficiaries
   },
+  {
+    name: "History",
+    to: "/exchanger/history",
+    className: s.history
+  },
+  {
+    name: "Support",
+    to: "/exchanger/support",
+    className: s.support
+  },
+  {
+    name: "Settings",
+    to: "/exchanger/settings",
+    className: s.settings
+  },
+  {
+    name: "Logout",
+    to: "/exchanger/logout",
+    className: s.logout
+  },
 ];
 
 const getClassName = ({className, to}) => to === document.location.pathname ? `${className} ${s.active}` : className;
@@ -32,7 +52,7 @@ const getClassName = ({className, to}) => to === document.location.pathname ? `$
 export default function MainMenu() {
   return (
     <nav className={s.mainMenu}>
-      <ul>
+      <ul className={s.menuContainer} >
         {items.map((item, index) => (
           <li key={index}>
             <Link

@@ -14,8 +14,18 @@
     background-size: 26px 26px;
 }
 
+.menuContainer {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+
+li:last-child {
+  margin-top: auto;
+}
+  
+}
 .active {
-  color: blue;
+  color: $colorAccent;
 }
 
 .converter {
@@ -33,7 +43,30 @@
 .beneficiaries {
     composes: mainMenuItem;
     background-image: url('../../assets/svg/menu/beneficiary.svg');
+
+    border-bottom: 1px solid $inputBorderColor;
+    padding-bottom: 30px;
 }
+.history {
+    composes: mainMenuItem;
+    padding-top: 30px;
+    background-image: url('../../assets/svg/menu/history.svg');
+}
+.support {
+    composes: mainMenuItem;
+    background-image: url('../../assets/svg/menu/support.svg');
+}
+.settings {
+    composes: mainMenuItem;
+    background-image: url('../../assets/svg/menu/settings.svg');
+}
+.logout {
+    composes: mainMenuItem;
+    background-image: url('../../assets/svg/menu/logout.svg');
+    border-top: 1px solid $inputBorderColor;
+    padding-top: 30px;
+}
+
 
 @media (min-width: $laptop) {
   .mainMenu {
