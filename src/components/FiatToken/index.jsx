@@ -14,7 +14,7 @@ export default function FiatToken() {
             <BeneficiaryPane />
             <TermsPane />
             <NextStep 
-                path="" 
+                path="/exchanger/fiat-token/transaction-done" 
                 buttonText="Continue" 
                 infoText={
                     (className) => (

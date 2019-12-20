@@ -75,8 +75,8 @@ const SelectCurrency = props => {
   return (
     <Select
       {...props}
-      className="SelectCurrency"
-      classNamePrefix="SelectCurrency"
+      className="OverrideRS CustomSelect"
+      classNamePrefix="CustomSelect"
       menuPlacement={"bottom"}
       styles={selectStyles}
       components={{Control, Option, SingleValue, DropdownIndicator}}

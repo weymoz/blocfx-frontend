@@ -21,7 +21,9 @@
 .customOption {
     display: flex;
     align-items: center;
-    padding: 10px;
+    justify-content: space-between; 
+    padding: 15px 0;
+    border-bottom: 1px solid $inputBorderColor;
 
     &_Code {
         font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
@@ -29,6 +31,7 @@
 
     &_Name {
         margin-left: auto;
+        font-size: 14px;
     }
 }
 

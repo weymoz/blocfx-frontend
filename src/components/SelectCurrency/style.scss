@@ -21,16 +21,23 @@
 .customOption {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 20px 0;
 
     &_Code {
         font-family: 'Muli Bold', Arial, Helvetica, sans-serif;
+        margin-right: 20px;
     }
 
     &_Name {
         margin-left: auto;
+
     }
 }
+
+:global(.CustomSelect__option:not(:last-child) > div ) {
+    border-bottom: 1px solid $inputBorderColor;
+}
+
 
 .inputLabel {
     display: block;
@@ -39,6 +46,7 @@
     overflow: hidden;
 }
 
+/*
 :global(.SelectCurrency) {
     &__menu {
         width: calc(100vw - 72px) !important;
@@ -57,3 +65,4 @@
         }
     }
 }
+*/

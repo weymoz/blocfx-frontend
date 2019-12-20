@@ -1,0 +1,11 @@
+@media (min-width: 650px) and (max-width: 1024px) {
+  :global(.OverrideRS .CustomSelect__menu) {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1025px) {
+  :global(.OverrideRS .CustomSelect__menu) {
+    width: auto;
+  }
+}

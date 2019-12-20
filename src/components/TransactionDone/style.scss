@@ -1,0 +1,51 @@
+@import "src/variables";
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+.message {
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 80%;
+}
+
+.info {
+  p:nth-child(2n-1) {
+    font-family: "Muli Regular", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 8px;
+  }
+
+  p:nth-child(2n) {
+    color: $colorPrimary;
+    font-family: "Muli Bold", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+.message {
+    max-width: 60%;
+}
+
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .info {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: 1fr 1.4fr 1fr 1fr;
+    grid-template-rows: min-content min-content;
+    grid-auto-flow: column;
+  }
+}

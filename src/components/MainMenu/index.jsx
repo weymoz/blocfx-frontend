@@ -30,7 +30,6 @@ const items = [
 const getClassName = ({className, to}) => to === document.location.pathname ? `${className} ${s.active}` : className;
 
 export default function MainMenu() {
-  console.log(document.location.pathname);
   return (
     <nav className={s.mainMenu}>
       <ul>

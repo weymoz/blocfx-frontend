@@ -1,0 +1,37 @@
+
+.downloadButton {
+	height: 36px;
+	width: 36px;
+    border-radius: 4px;
+    background-color: #e2e3eff5;
+    border: none;
+
+    color: #151f51;
+    font-family: "Muli Bold", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+}
+
+.text {
+    display: none;
+}
+
+@media (min-width: 768px) {
+  .downloadButton {
+    height: 44px;
+    width: 209px;
+  }
+.icon {
+    display: none;
+}
+
+.text {
+    display: inline;
+}
+}

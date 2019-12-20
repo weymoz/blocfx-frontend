@@ -29,7 +29,8 @@ export default {
     return {
       ...provided,
       borderRadius: 2,
-      width: "calc(100vw - 70px)",
+      width: "100%",
+
       right: 0
     };
   },

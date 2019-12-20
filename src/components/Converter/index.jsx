@@ -25,8 +25,8 @@ const mapBeneficiariesToOptions = beneficiaries => beneficiaries.map(b => b);
 
 export default function Converter() {
   // Input value data
-  let [value1, setValue1] = useState("10");
-  let [value2, setValue2] = useState("100");
+  let [value1, setValue1] = useState("200");
+  let [value2, setValue2] = useState("181.05");
 
   // Select currency data
   let [currencyType1, setCurrencyType1] = useState(fiatCurrencies);
@@ -35,22 +35,22 @@ export default function Converter() {
   let [currencyOptions1, setCurrencyOptions1] = useState(
     mapCurrenciesToOptions(fiatCurrencies)
   );
-  let [currencyOptions2, setOptions2] = useState(
+  let [currencyOptions2, setCurrencyOptions2] = useState(
     mapCurrenciesToOptions(fiatCurrencies)
   );
 
   let [currency1, setCurrency1] = useState(currencyOptions1[0]);
-  let [currency2, setCurrency2] = useState(currencyOptions2[0]);
+  let [currency2, setCurrency2] = useState(currencyOptions2[1]);
 
   // Select account data
   let [accountType1, setAccountType1] = useState(ACCOUNT_TYPE.BANK);
-  let [accountType2, setAccountType2] = useState(ACCOUNT_TYPE.BENEFICIARY);
+  let [accountType2, setAccountType2] = useState(ACCOUNT_TYPE.BANK);
 
   let [accountOptions1, setAccountOptions1] = useState(
     mapAccountsToOptions(accounts)
   );
   let [accountOptions2, setAccountOptions2] = useState(
-    mapAccountsToOptions(beneficiaries)
+    mapAccountsToOptions(accounts)
   );
 
   let [accountValue1, setAccountValue1] = useState(null);
@@ -140,7 +140,7 @@ export default function Converter() {
           />
 
           <p className={s.infoLine}>
-            Min. ammount: <span className={s.infoLineAmmount}>198.39 USD</span>
+            Min. ammount: <span className={s.infoLineAmmount}>100 USD</span>
           </p>
         </div>
 
@@ -171,7 +171,7 @@ export default function Converter() {
             placeholder={placeholder2}
           />
 
-          <p className={s.infoLine} >1 ETH = 198.39 USD</p>
+          <p className={s.infoLine} >100 USD = 90.5EUR</p>
         </div>
 
       </section>

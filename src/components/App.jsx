@@ -14,7 +14,7 @@ export default function App () {
             <Switch>
                 <Route path="/registration" component={Registration} />
                 <Route path="/exchanger" component={Exchanger} />
-                <Redirect to="/registration" />
+                <Redirect to="/exchanger" />
             </Switch>
         </Router>
     )

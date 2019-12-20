@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Select, { components } from "react-select";
-import selectStyles from "@/common/select-styles"
+import selectStyles from "@/common/select-account-styles"
 import s from "./style.scss";
 
 const ACCOUNT_TYPE = {
@@ -54,9 +54,9 @@ const Option = props => {
     case ACCOUNT_TYPE.BANK:
       const { bank, number } = props.data;
       Content = (
-        <div >
-          <div>{bank}</div>
-          <div>{number}</div>
+        <div className={s.customOption}>
+          <div className={s.customOption_Code}>{bank}</div>
+          <div className={s.customOption_Name}>{number}</div>
         </div>
       )
       break;
@@ -64,7 +64,7 @@ const Option = props => {
       case ACCOUNT_TYPE.BENEFICIARY:
         const { name, currency } = props.data
         Content = (
-          <div >
+          <div className={s.customOption}>
             <div>{name}</div>
             <div>{currency}</div>
           </div>
@@ -89,7 +89,6 @@ const MenuList = props => {
   const { type } = props.selectProps;
   return (
     <components.MenuList {...props}>
-      <div>{`Add ${type}`}</div>
       {props.children}
     </components.MenuList>
   );
@@ -103,6 +102,7 @@ const SelectAccount = props => {
       menuPlacement={"bottom"}
       styles={selectStyles}
       components={{ Option, SingleValue, DropdownIndicator, MenuList }}
+      //menuIsOpen
     />
   );
 };

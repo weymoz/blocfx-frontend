@@ -7,6 +7,7 @@ import {
 import Header from '@/components/Header'
 import Converter from '@/components/Converter'
 import FiatToken from '@/components/FiatToken'
+import TransactionDone from '@/components/TransactionDone'
 import s from "./style.scss";
 
 export default function Exchanger() {
@@ -19,6 +20,9 @@ export default function Exchanger() {
           <Switch>
             <Route path="/exchanger/converter" >
                 <Converter />
+            </Route>
+            <Route path="/exchanger/fiat-token/transaction-done" >
+                <TransactionDone />
             </Route>
             <Route path="/exchanger/fiat-token" >
                 <FiatToken />

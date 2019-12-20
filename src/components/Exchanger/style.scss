@@ -4,6 +4,7 @@
   background-color: rgba(248,248,252,0.6);
   max-width: 1440px;
   margin: 0 auto;
+  min-height: 100vh;
 }
 
 .contentContainer {
@@ -13,10 +14,12 @@
 @media (min-width: $laptop) {
   .layout {
     display: flex;
+    align-items: stretch;
   }
 
   .headerContainer {
-    min-width: 25%;
+    width: 20%;
+    min-width: 257px;
   }
 
   .contentContainer {
