@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import s from "./style.scss";
 
 function NextStep({ history, path, buttonText, infoText }) {
-  console.log(path, buttonText, infoText)
   return (
     <div className={s.acceptRates}>
       <button

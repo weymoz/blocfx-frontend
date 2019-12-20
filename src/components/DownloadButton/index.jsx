@@ -1,7 +1,6 @@
 import React from "react";
 import s from './style.scss'
 import icon from '../../assets/sprites/download.svg'
-console.log(icon)
 
 export default () => {
     return (

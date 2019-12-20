@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
-  mode: "production",
+  mode: "development",
+  //mode: "production",
   entry: "./src/index.jsx",
   devtool: 'inline-source-map',
   output: {

@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Direction from "@/components/Direction";
 import SelectCurrency from "@/components/SelectCurrency";
 import InputValue from "@/components/InputValue";
-import SelectAccount, { ACCOUNT_TYPE } from "@/components/SelectAccount";
+import CreatableSelectAccount, {ACCOUNT_TYPE} from "@/components/CreatableSelectAccount";
 import NextStep from "@/components/NextStep";
 import PopularCurrencies from "@/components/PopularCurrencies";
 
@@ -19,7 +19,7 @@ const mapCurrenciesToOptions = currencies =>
 // const mapAccountsToOptions = accounts =>
 //   accounts.map(a => ({ value: a.number, label: a.number, info: a }));
 
-const mapAccountsToOptions = accounts => accounts.map(a => a);
+const mapAccountsToOptions = accounts => accounts.map(a => ({value: a.id, label: a.id}));
 
 const mapBeneficiariesToOptions = beneficiaries => beneficiaries.map(b => b);
 
@@ -55,6 +55,7 @@ export default function Converter() {
 
   let [accountValue1, setAccountValue1] = useState(null);
   let [accountValue2, setAccountValue2] = useState(null);
+
 
   let [placeholder1, setPlaceholder1] = useState("Select Payment Account");
   let [placeholder2, setPlaceholder2] = useState("Select Beneficiary");
@@ -106,8 +107,11 @@ export default function Converter() {
 
   // Handle currency type select change
   function onSelectChange(setState, value) {
+    console.log("onSelectChange")
+    console.log(value)
     setState(value);
   }
+
 
   return (
     <>
@@ -130,14 +134,14 @@ export default function Converter() {
             value={currency1}
           />
 
-          <SelectAccount
+          {/* <SelectAccount
             className={s.selectAccount}
             type={accountType1}
             options={accountOptions1}
             value={accountValue1}
             onChange={onSelectChange.bind(null, setAccountValue1)}
             placeholder={placeholder1}
-          />
+          /> */}
 
           <p className={s.infoLine}>
             Min. ammount: <span className={s.infoLineAmmount}>100 USD</span>
@@ -162,14 +166,21 @@ export default function Converter() {
             value={currency2}
           />
 
-          <SelectAccount
+          <CreatableSelectAccount 
+            type={accountType2}
+            options={accountOptions2} 
+            value={accountValue2}
+            placeholder="select Payment account"
+            onChange={onSelectChange.bind(null, setAccountValue2)}
+          />
+          {/* <SelectAccount
             className={s.selectAccount}
             type={accountType2}
             options={accountOptions2}
             value={accountValue2}
             onChange={onSelectChange.bind(null, setAccountValue2)}
             placeholder={placeholder2}
-          />
+          /> */}
 
           <p className={s.infoLine} >100 USD = 90.5EUR</p>
         </div>
