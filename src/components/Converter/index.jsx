@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useReducer } from "react";
 import Direction from "@/components/Direction";
 import SelectCurrency from "@/components/SelectCurrency";
 import InputValue from "@/components/InputValue";
@@ -16,98 +16,61 @@ import s from "./style.scss";
 const mapCurrenciesToOptions = currencies =>
   Object.keys(currencies).map(code => ({ value: code, label: code }));
 
-// const mapAccountsToOptions = accounts =>
-//   accounts.map(a => ({ value: a.number, label: a.number, info: a }));
+const UPDATE_SRC_INPUT = "UPDATE_SRC_INPUT";
+const UPDATE_DEST_INPUT = "UPDATE_DEST_INPUT";
+const SWAP_INPUTS = "SWAP_INPUTS";
 
-const mapAccountsToOptions = accounts => accounts.map(a => a);
+const initialState = {
+  src: {
+    input: ""
+  },
+  dest: {
+    input: ""
+  },
+};
 
-const mapBeneficiariesToOptions = beneficiaries => beneficiaries.map(b => b);
+const reducer = (state, action) => {
+
+  switch (action.type) {
+
+    case UPDATE_SRC_INPUT:
+      return {
+        ...state,
+        src: {
+          ...state.src,
+          input: action.payload
+        }  
+      };
+
+    case UPDATE_DEST_INPUT:
+      return {
+        ...state,
+        dest: {
+          ...state.dest,
+          input: action.payload
+        }  
+      };
+
+      case SWAP_INPUTS:
+        console.log("swap");
+        return {
+          ...state,
+          src: { ...state.dest },
+          dest: { ...state.src }
+        };
+      
+      default:
+        return state;
+  }
+}
+
 
 export default function Converter() {
-  // Input value data
-  let [value1, setValue1] = useState("200");
-  let [value2, setValue2] = useState("181.05");
 
-  // Select currency data
-  let [currencyType1, setCurrencyType1] = useState(fiatCurrencies);
-  let [currencyType2, setCurrencyType2] = useState(fiatCurrencies);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  let [currencyOptions1, setCurrencyOptions1] = useState(
-    mapCurrenciesToOptions(fiatCurrencies)
-  );
-  let [currencyOptions2, setCurrencyOptions2] = useState(
-    mapCurrenciesToOptions(fiatCurrencies)
-  );
+  console.log(state);
 
-  let [currency1, setCurrency1] = useState(currencyOptions1[0]);
-  let [currency2, setCurrency2] = useState(currencyOptions2[1]);
-
-  // Select account data
-  let [accountType1, setAccountType1] = useState(ACCOUNT_TYPE.BANK);
-  let [accountType2, setAccountType2] = useState(ACCOUNT_TYPE.BANK);
-
-  let [accountOptions1, setAccountOptions1] = useState(
-    mapAccountsToOptions(accounts)
-  );
-  let [accountOptions2, setAccountOptions2] = useState(
-    mapAccountsToOptions(accounts)
-  );
-
-  let [accountValue1, setAccountValue1] = useState(null);
-  let [accountValue2, setAccountValue2] = useState(null);
-
-  let [placeholder1, setPlaceholder1] = useState("Select Payment Account");
-  let [placeholder2, setPlaceholder2] = useState("Select Beneficiary");
-
-  // Swap exchange source and destination
-  function swap() {
-    let temp;
-
-    // Swap input value src. and dest.
-    temp = value1;
-    setValue1(value2);
-    setValue2(temp);
-
-    // Swap select src. and dest.
-    temp = currencyOptions1;
-    setCurrencyOptions1(currencyOptions2);
-    setCurrencyOptions2(temp);
-
-    temp = currency1;
-    setCurrency1(currency2);
-    setCurrency2(temp);
-
-    temp = currencyType1;
-    setCurrencyType1(currencyType2);
-    setCurrencyType2(temp);
-
-    // Swap select acc. type
-    temp = accountType1;
-    setAccountType1(accountType2);
-    setAccountType2(temp);
-
-    temp = accountOptions1;
-    setAccountOptions1(accountOptions2);
-    setAccountOptions2(temp);
-
-    temp = accountValue1;
-    setAccountValue1(accountValue2);
-    setAccountValue2(temp);
-
-    temp = placeholder1;
-    setPlaceholder1(placeholder2);
-    setPlaceholder2(temp);
-  }
-
-  // Handle currency value input change
-  function onInputChange(setState, evt) {
-    setState(evt.target.value);
-  }
-
-  // Handle currency type select change
-  function onSelectChange(setState, value) {
-    setState(value);
-  }
 
   return (
     <>
@@ -115,60 +78,32 @@ export default function Converter() {
 
       <section className={s.container}>
         <div className={s.pane}>
+
           <InputValue
             className={s.inputValue}
-            onChange={onInputChange.bind(null, setValue1)}
-            value={value1}
+            onChange={ e => dispatch( { type: UPDATE_SRC_INPUT, payload: e.target.value } ) }
+            value={ state.src.input }
             labelText="You send"
-          />
-
-          <SelectCurrency
-            className={s.selectCurrency}
-            currency={currencyType1}
-            options={currencyOptions1}
-            onChange={onSelectChange.bind(null, setCurrency1)}
-            value={currency1}
-          />
-
-          <SelectAccount
-            className={s.selectAccount}
-            type={accountType1}
-            options={accountOptions1}
-            value={accountValue1}
-            onChange={onSelectChange.bind(null, setAccountValue1)}
-            placeholder={placeholder1}
           />
 
           <p className={s.infoLine}>
             Min. ammount: <span className={s.infoLineAmmount}>100 USD</span>
           </p>
+
         </div>
 
-        <Direction onClick={swap} />
+        <Direction onClick={ () => {
+          console.log("click")
+          dispatch({ type: SWAP_INPUTS });
+        } } />
 
         <div className={s.pane}>
+
           <InputValue
             className={s.inputValue}
-            onChange={onInputChange.bind(null, setValue2)}
-            value={value2}
-            labelText="You Get"
-          />
-
-          <SelectCurrency
-            className={s.selectCurrency}
-            currency={currencyType2}
-            options={currencyOptions2}
-            onChange={onSelectChange.bind(null, setCurrency2)}
-            value={currency2}
-          />
-
-          <SelectAccount
-            className={s.selectAccount}
-            type={accountType2}
-            options={accountOptions2}
-            value={accountValue2}
-            onChange={onSelectChange.bind(null, setAccountValue2)}
-            placeholder={placeholder2}
+            onChange={ e => dispatch( { type: UPDATE_DEST_INPUT, payload: e.target.value } ) }
+            value={ state.dest.input }
+            labelText="You send"
           />
 
           <p className={s.infoLine} >100 USD = 90.5EUR</p>
